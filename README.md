@@ -1,2 +1,2 @@
 # Gamegrid 
-[Gamegrid](/gamegrid.md)
+[Pacman](/gamegrid.md)
