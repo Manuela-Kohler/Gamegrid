@@ -14,25 +14,37 @@ Pacman wird durch das Spielfeld gesteuert und muss alle Orangen fressen, währen
 + Klasse `Orange`: 30 Orangen an zufälligen Positionen
 + Klasse `Ghost`: 2-3 Geister, die sich automatisch bewegen (mit `act()`-Methode)
 + Kollisionserkennung: Pacman frisst Orangen -> +1 Punkt
-+ Kollisionserkennung: Geist berührt Pacman -> Game Over mit `setStatusText()` und `doPause()`
-+ Punktezähler und Statusmeldungen
++ Kollisionserkennung: Geist berührt Pacman -> Game Over mit `msgDlg()` und `doPause()`
 + Gewinnmeldung bei allen gefressenen Orangen
 
 
 #### Erweiterungen (Optional):
-* Geister bewegen sich zufällig: `self.turn(random.randint(0,3)*90)` bei Rand
-* Power-Orangen(grössere Orangen): Pacman kann 5 Sekunden lang Geister fressen
+* Geister jagen Pacman
 * Mehrere Leben: 3 Leben, bei Geist-Kollision -1 Leben
 * Level-System: Level 2 mit mehr Geistern.
 
 #### Hilfestellung:
+
+Nutze das untenstehende Programmgerüst. Gehe wie folgt vor:
+
+1) generiere das Gamegrid
+2) Implementiere die Klasse Orange(), platziere 30 Orangen im Feld mit Hilfe von `getRandomEmptyLocation()`
+3) Implementiere die Klasse `Pacman()`: 
+    - Implementiere die Tastatursteuerung `keyCallback(e)`
+    - Implementiere die Funktion `tryToEat()` -> Kollisionen
+4) Implementiere die Klasse `Ghost()`:
+    - Implementiere die Funktion `act(self)`
+    - Implementiere die Kollision zwischen Ghost und Pacman in `act()`
+    - Füge nach Entfernen von Pacman die Nachricht "You lose!" mit `msgDlg("You lose!")` hinzu und pausiere das Spiel mit `doPause()`.
+    - Füge eine Nachricht hinzu, wie beim Verlieren, allerdings muss hier noch die Funktion `getActors(Orange)` verwendet werden, die eine Liste aller Orangen erstellt -> `len(getActors(Orange))`gibt demnach an, wie viele Orangen übrig sind, sind es 0, soll die Nachricht ausgegeben werden.
+ 
+
+
 `````
 from gamegrid import *
 import random
 
-score = 0
-totalPills = 30
-
+# ----------------------- class Pacman ----------------------------------
 class Pacman(Actor):
     def __init__(self):
         Actor.__init__(self, True, "sprites/pacman.gif", 2)
@@ -41,34 +53,35 @@ class Pacman(Actor):
         # Pillen fressen
         pass
     
-    def checkGhost(self):
-        # Geist-Kollision prüfen
+   
+# ----------------------- class Orange ---------------------------------
+class Orange(Actor):
+    def __init__(self):
+        #Actor.
         pass
 
-class Pill(Actor):
-    def __init__(self):
-        Actor.__init__(self, "sprites/pill_0.gif")
-
+# ----------------------- class Ghost ----------------------------------
 class Ghost(Actor):
     def __init__(self):
         Actor.__init__(self, "sprites/ghost_0.gif")
     
     def act(self):
         self.move()
-        # Randprüfung und zufällige Drehung
+        # Randprüfung und Drehung auf nächste Zeile
         pass
 
+-------------------------- main ---------------------------------------
 def keyCallback(e):
     # Tastatursteuerung
     paki.tryToEat()
-    paki.checkGhost()
+    paki.move()
 
 makeGameGrid(15, 15, 40, Color.black, False, keyPressed=keyCallback)
 # Actors hinzufügen
 show()
 doRun()
 `````
-
+<!----
 ### 2 Fisch-Jagd
 Spielidee: <br>
 Ein grosser Fisch (vom Spieler gesteuert) jagt kleine Fische. Gleichzeitig muss er Haien ausweichen.
@@ -187,6 +200,7 @@ makeGameGrid(10, 10, 60, Color.blue, "sprites/reef.gif", False, keyPressed=keyCa
 show()
 doRun()
 `````
+-->
 
 
 ## Vorgehen
