@@ -75,8 +75,9 @@ def keyCallback(e):
     # Tastatursteuerung
     paki.tryToEat()
     paki.move()
+    pass
 
-makeGameGrid(15, 15, 40, Color.black, False, keyPressed=keyCallback)
+makeGameGrid()
 # Actors hinzufügen
 show()
 doRun()
