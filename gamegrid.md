@@ -30,13 +30,13 @@ Nutze das untenstehende Programmgerüst. Gehe wie folgt vor:
 1. generiere das Gamegrid
 2. Implementiere die Klasse Orange(), platziere 30 Orangen im Feld mit Hilfe von `getRandomEmptyLocation()`
 3. Implementiere die Klasse `Pacman()`: 
-    - Implementiere die Tastatursteuerung `keyCallback(e)`
-    - Implementiere die Funktion `tryToEat()` -> Kollisionen
+    * Implementiere die Tastatursteuerung `keyCallback(e)`
+    * Implementiere die Funktion `tryToEat()` -> Kollisionen
 4. Implementiere die Klasse `Ghost()`:
-    - Implementiere die Funktion `act(self)`
-    - Implementiere die Kollision zwischen Ghost und Pacman in `act()`
-    - Füge nach Entfernen von Pacman die Nachricht "You lose!" mit `msgDlg("You lose!")` hinzu und pausiere das Spiel mit `doPause()`.
-    - Füge eine Nachricht hinzu, wie beim Verlieren, allerdings muss hier noch die Funktion `getActors(Orange)` verwendet werden, die eine Liste aller Orangen erstellt -> `len(getActors(Orange))`gibt demnach an, wie viele Orangen übrig sind, sind es 0, soll die Nachricht ausgegeben werden.
+    * Implementiere die Funktion `act(self)`
+    * Implementiere die Kollision zwischen Ghost und Pacman in `act()`
+    * Füge nach Entfernen von Pacman die Nachricht "You lose!" mit `msgDlg("You lose!")` hinzu und pausiere das Spiel mit `doPause()`.
+    * Füge eine Nachricht hinzu, wie beim Verlieren, allerdings muss hier noch die Funktion `getActors(Orange)` verwendet werden, die eine Liste aller Orangen erstellt -> `len(getActors(Orange))`gibt demnach an, wie viele Orangen übrig sind, sind es 0, soll die Nachricht ausgegeben werden.
  
 
 
