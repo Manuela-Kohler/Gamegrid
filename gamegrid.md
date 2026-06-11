@@ -205,7 +205,7 @@ doRun()
 
 ## Vorgehen
 
-Gehe zum Tutorial über [Gamegrid](www.python-online.ch/gamegrid) der WebTigerPython-Distribution.
+Gehe zum Tutorial über [Gamegrid](https://www.python-online.ch/index.php?inhalt_links=gamegrid/navigation.inc.php&inhalt_mitte=gamegrid/gamegrid.inc.php) der WebTigerPython-Distribution.
 Arbeite die Tutorials zu:
 + [Spielfenster](https://www.python-online.ch/index.php?inhalt_links=gamegrid/navigation.inc.php&inhalt_mitte=gamegrid/spielfenster.inc.php)
 + [Actors](https://www.python-online.ch/index.php?inhalt_links=gamegrid/navigation.inc.php&inhalt_mitte=gamegrid/actors.inc.php) 
