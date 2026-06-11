@@ -27,12 +27,12 @@ Pacman wird durch das Spielfeld gesteuert und muss alle Orangen fressen, währen
 
 Nutze das untenstehende Programmgerüst. Gehe wie folgt vor:
 
-1) generiere das Gamegrid
-2) Implementiere die Klasse Orange(), platziere 30 Orangen im Feld mit Hilfe von `getRandomEmptyLocation()`
-3) Implementiere die Klasse `Pacman()`: 
+1. generiere das Gamegrid
+2. Implementiere die Klasse Orange(), platziere 30 Orangen im Feld mit Hilfe von `getRandomEmptyLocation()`
+3. Implementiere die Klasse `Pacman()`: 
     - Implementiere die Tastatursteuerung `keyCallback(e)`
     - Implementiere die Funktion `tryToEat()` -> Kollisionen
-4) Implementiere die Klasse `Ghost()`:
+4. Implementiere die Klasse `Ghost()`:
     - Implementiere die Funktion `act(self)`
     - Implementiere die Kollision zwischen Ghost und Pacman in `act()`
     - Füge nach Entfernen von Pacman die Nachricht "You lose!" mit `msgDlg("You lose!")` hinzu und pausiere das Spiel mit `doPause()`.
