@@ -50,7 +50,7 @@ class Pacman(Actor):
         Actor.__init__(self, True, "sprites/pacman.gif", 2)
     
     def tryToEat(self):
-        # Pillen fressen
+        # Orangen fressen
         pass
     
    
@@ -70,7 +70,7 @@ class Ghost(Actor):
         # Randprüfung und Drehung auf nächste Zeile
         pass
 
--------------------------- main ---------------------------------------
+#-------------------------- main ---------------------------------------
 def keyCallback(e):
     # Tastatursteuerung
     paki.tryToEat()
